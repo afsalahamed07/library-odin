@@ -34,11 +34,11 @@ function removeBookFromLibrary( book ) {
 }
 
 function renderBook( book ) {
-    return `<div class="book flex flex-row gap-4">
-        <div>${ book.title }</div>
-        <div>Author: ${ book.author }</div>
-        <div>Pages: ${ book.pages }</div>
-        <div>Status: ${ book.read ? "read" : "not read yet" }</div>
+    return `<div class="book flex flex-row gap-4 shadow-md rounded-md">
+        <div class="basis-1/3 p-4 font-bold">${ book.title }</div>
+        <div class="basis-1/4 p-4">Author: ${ book.author }</div>
+        <div class="basis-1/4 p-4">Pages: ${ book.pages }</div>
+        <div class="basis-1/4 p-4">Status: ${ book.read ? "read" : "not read yet" }</div>
     </div>`;
 }
 
