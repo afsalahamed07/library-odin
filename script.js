@@ -3,6 +3,7 @@ const addButton = document.querySelector( "#add-book" );
 const closeButton = document.querySelector( "#close-dialog" );
 const addBookForm = document.querySelector( "#add-book-form" );
 const removeBookButtons = document.querySelectorAll( ".remove-btn" );
+const statusCheckboxes = document.querySelectorAll( ".status-check" );
 
 addButton.addEventListener( "click", () => {
     dialog.showModal();
@@ -44,3 +45,17 @@ removeBookButtons.forEach( button => button.addEventListener
         removeBookFromLibrary( book );
     } )
 );
+
+statusCheckboxes.forEach( checkbox => checkbox.addEventListener(
+    "click",
+    () => {
+        let parentDiv = checkbox.parentElement.parentElement;
+        let id = parentDiv.id;
+
+        let status = parentDiv.querySelector( ".status" );
+        checkbox.checked ? status.textContent = "read" : status.textContent = "not read yet";
+
+        const book = myLibrary.find( book => `book-${ book.id }` === id );
+        book.read = !book.read;
+    })
+)

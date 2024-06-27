@@ -25,7 +25,7 @@ function Book( title, author, pages, read ) {
 }
 
 function addBookToLibrary( book ) {
-    console.log(`adding ${ book.title } to library`)
+    console.log( `adding ${ book.title } to library` )
     myLibrary.push( book );
 }
 
@@ -39,9 +39,19 @@ function removeBookFromLibrary( book ) {
 function renderBook( book ) {
     return `<div id= "book-${ book.id }" class="book flex flex-row gap-4 shadow-md rounded-md">
         <div class="basis-1/3 p-4 font-bold">${ book.title }</div>
-        <div class="basis-1/4 p-4">Author: ${ book.author }</div>
-        <div class="basis-1/4 p-4">Pages: ${ book.pages }</div>
-        <div class="basis-1/4 p-4">Status: ${ book.read ? "read" : "not read yet" }</div>
+        <div class="basis-1/4 p-4">${ book.author }</div>
+        <div class="basis-1/4 p-4">${ book.pages }</div>
+        <div class="basis-1/4 p-4 flex flex-row gap-2">
+            <p class="status basis-2/3">
+                ${ book.read ? "read" : "not read yet" }
+            </p>
+            <label class="tems-center cursor-pointer">
+                  <input ${ book.read ? checked = "checked" : "" } type="checkbox" value="" class="status-check sr-only peer">
+                  <div class="relative w-11 h-6 bg-red-600 peer-focus:outline-none 
+                   rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full 
+                   peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            </label>
+        </div>
         <div class="basis-1/12 p-4">
             <button class="remove-btn px-2 font-bold rounded-full border border-red-500 hover:bg-red-500
             hover:text-white">-</button>
