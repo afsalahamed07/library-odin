@@ -23,6 +23,7 @@ function Book( title, author, pages, read ) {
 }
 
 function addBookToLibrary( book ) {
+    console.log(`adding ${ book.title } to library`)
     myLibrary.push( book );
 }
 
@@ -48,5 +49,9 @@ function renderLibrary() {
         console.log( "book", book )
         document.getElementById( "library" ).innerHTML += renderBook( book );
     } );
+}
+
+function appendBookToLibrary( book ) {
+    document.getElementById( "library" ).innerHTML += renderBook( book );
 }
 

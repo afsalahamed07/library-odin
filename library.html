@@ -10,13 +10,45 @@
 <div class="container mx-auto font-mono p-2">
 
     <div class="flex flex-row items-center p-2 gap-2 m-2">
-        <img src="odin.png" alt="odin logo" class="h-20 p-2" >
+        <img src="odin.png" alt="odin logo" class="h-20 p-2">
         <div class="font-bold text-2xl">Odin Library</div>
     </div>
 
     <div id="library" class="flex flex-col gap-4">
     </div>
+
+    <button id="add-book"
+            class="bg-red-600 hover:bg-red-700 text-white font-bold px-5 py-2 my-4 rounded-lg">ADD BOOK
+    </button>
+
+    <dialog class="w-6/12 p-6 rounded-md shadow-md">
+        <button autofocus id="close-dialog" class="float-right">X</button>
+        <form id="book-form" class="flex flex-col gap-4 p-4 ">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required
+                   class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm
+                   focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm
+                   focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages" name="pages" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm
+                   focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+            <div class="flex flex-row gap-4 items-center">
+                <label for="read">Read</label>
+                <input type="checkbox" id="read" name="read"
+                       class="w-5 h-5 text-red-600 rounded-md focus:ring-red-500 shadow-sm
+                        border broder-gray-300 p-2 focus:outline-none focus:border-indigo-500">
+            </div>
+            <button type="submit" id="add-book-form"
+                    class="bg-red-600 hover:bg-red-700 text-white font-bold px-5 py-2 my-4 rounded-lg">Add
+            </button>
+        </form>
+    </dialog>
+
 </div>
+
 <script src="Book.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
