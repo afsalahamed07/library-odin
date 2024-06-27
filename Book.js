@@ -1,4 +1,5 @@
 const myLibrary = [];
+let bookCounter = 0; // counter is used to index the books
 
 // some random books
 const book1 = new Book( "The Hobbit", "J.R.R. Tolkien", 295, true );
@@ -12,6 +13,7 @@ addBookToLibrary( book3 );
 renderLibrary();
 
 function Book( title, author, pages, read ) {
+    this.id = ++bookCounter;
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -35,11 +37,15 @@ function removeBookFromLibrary( book ) {
 }
 
 function renderBook( book ) {
-    return `<div class="book flex flex-row gap-4 shadow-md rounded-md">
+    return `<div id= "book-${ book.id }" class="book flex flex-row gap-4 shadow-md rounded-md">
         <div class="basis-1/3 p-4 font-bold">${ book.title }</div>
         <div class="basis-1/4 p-4">Author: ${ book.author }</div>
         <div class="basis-1/4 p-4">Pages: ${ book.pages }</div>
         <div class="basis-1/4 p-4">Status: ${ book.read ? "read" : "not read yet" }</div>
+        <div class="basis-1/12 p-4">
+            <button class="remove-btn px-2 font-bold rounded-full border border-red-500 hover:bg-red-500
+            hover:text-white">-</button>
+        <div>
     </div>`;
 }
 
