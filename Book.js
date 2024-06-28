@@ -1,3 +1,17 @@
+class Book {
+  constructor(title, author, pages, read = false) {
+    this.id = ++bookCounter;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+
+    this.info = function () {
+      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet"}`;
+    };
+  }
+}
+
 const myLibrary = [];
 let bookCounter = 0; // counter is used to index the books
 
@@ -11,20 +25,6 @@ addBookToLibrary(book2);
 addBookToLibrary(book3);
 
 renderLibrary();
-
-class Book {
-    constructor(title, author, pages, read) {
-        this.id = ++bookCounter;
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.read = read;
-
-        this.info = function() {
-            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet"}`;
-        };
-    }
-}
 
 function addBookToLibrary(book) {
   console.log(`adding ${book.title} to library`);

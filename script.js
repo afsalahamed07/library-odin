@@ -31,7 +31,6 @@ removeBookButtons.forEach((button) =>
 
     // grab the parent div
     let parentDiv = button.parentElement.parentElement;
-
     let id = parentDiv.id;
 
     // remove the book from the DOM
@@ -45,7 +44,7 @@ removeBookButtons.forEach((button) =>
 
 statusCheckboxes.forEach((checkbox) =>
   checkbox.addEventListener("click", () => {
-    let parentDiv = checkbox.parentElement.parentElement;
+    let parentDiv = checkbox.parentElement.parentElement.parentElement;
     let id = parentDiv.id;
 
     let status = parentDiv.querySelector(".status");
