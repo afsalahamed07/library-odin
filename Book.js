@@ -7,7 +7,7 @@ class Book {
     this.read = read;
 
     this.info = function () {
-      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet"}`;
+      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "Read" : "Not Read Yet"}`;
     };
   }
 }
@@ -45,7 +45,7 @@ function renderBook(book) {
         <div class="basis-1/4 p-4">${book.pages}</div>
         <div class="basis-1/4 p-4 flex flex-row gap-2">
             <p class="status basis-2/3">
-                ${book.read ? "read" : "not read yet"}
+                ${book.read ? "Read" : "Not Read Yet"}
             </p>
             <label class="tems-center cursor-pointer">
                   <input ${book.read ? (checked = "checked") : ""} type="checkbox" value="" class="status-check sr-only peer">
